@@ -1,21 +1,19 @@
 const express = require("express");
-// const bcrypt = require("bcrypt");
-// const pool = require("./db");
 
+// const {initializePassport} = require('./passport-config')
 const registerRouter = require('./routes/register/register.router')
+const loginRouter = require('./routes/login/login.router')
+
+
 // Middlewares
 const app = express();
 app.use(express.json());
-
-// Routes
-// get Routes
-// app.get("/",  (req, res) => {});
+// initializePassport()
 
 // Create New User
 app.use(registerRouter)
-
-// login user
-app.post("/login", (req, res) => {});
+// login users
+app.use(loginRouter)
 
 app.listen(3000, () => {
   console.log("Server is running on port 3000");
