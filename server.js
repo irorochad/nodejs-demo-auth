@@ -1,6 +1,5 @@
 const express = require("express");
 
-// const {initializePassport} = require('./passport-config')
 const registerRouter = require('./routes/register/register.router')
 const loginRouter = require('./routes/login/login.router')
 
@@ -8,7 +7,6 @@ const loginRouter = require('./routes/login/login.router')
 // Middlewares
 const app = express();
 app.use(express.json());
-// initializePassport()
 
 // Create New User
 app.use(registerRouter)
